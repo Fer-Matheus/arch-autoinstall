@@ -1,0 +1,29 @@
+[Unit]
+Description=Automated Arch Linux Installation
+Documentation=https://github.com/archlinux/archinstall
+
+# Wait for NetworkManager to establish the WiFi connection
+After=network-online.target NetworkManager-wait-online.service
+Wants=network-online.target NetworkManager-wait-online.service
+
+# Only run once per live session (lock file is in tmpfs, cleared on reboot)
+ConditionPathNotExists=/run/archinstall-auto.lock
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# Create lock file before starting so a crash during install doesn't re-trigger
+ExecStartPre=/usr/bin/touch /run/archinstall-auto.lock
+
+# Run the installation script
+ExecStart=/bin/bash /root/install.sh
+
+StandardOutput=journal+console
+StandardError=journal+console
+
+# Give the install plenty of time (GNOME + packages can take 30+ min)
+TimeoutStartSec=3600
+
+[Install]
+WantedBy=multi-user.target

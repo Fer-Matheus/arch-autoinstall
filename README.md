@@ -3,8 +3,8 @@
 ### Organização do projeto
     unattend_arch/
     ├── config.json                          // configuração do archinstall
-    ├── creds.json                           // template (CHANGE_ME, não commitar)
-    ├── .gitignore                           // exclui creds.json do git
+    ├── creds.json                           // template
+    ├── .gitignore
     └── build/
         ├── build-iso.sh                     // script principal (roda no WSL)
         ├── docker-entrypoint.sh             // roda DENTRO do Docker
