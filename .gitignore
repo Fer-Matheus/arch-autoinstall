@@ -4,6 +4,7 @@ wifi.env
 
 # Build artifacts 
 build/output/
+build/overlay/
 build/*.iso
 
 # OS / Editor
