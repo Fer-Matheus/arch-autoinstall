@@ -1,0 +1,9 @@
+{
+    "users": [
+        {
+            "sudo": true,
+            "username": "your_username",
+            "enc_password": "your_encrypted_password"
+        }
+    ]
+}

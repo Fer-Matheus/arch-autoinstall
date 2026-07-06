@@ -1,0 +1,104 @@
+{
+    "archinstall-language": "English",
+    "hostname": "Jarvis",
+    "kernels": [
+        "linux"
+    ],
+    "timezone": "America/Fortaleza",
+    "ntp": true,
+    "packages": ["firefox"],
+    "services": [],
+    "silent": true,
+    "debug": false,
+    "offline": false,
+    "no_pkg_lookups": false,
+    "script": "guided",
+    "version": "2.8.6",
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US"
+    },
+    "bootloader_config": {
+        "bootloader": "Systemd-boot",
+        "uki": false,
+        "removable": false
+    },
+    "audio_config": {
+        "audio": "pipewire"
+    },
+    "swap": {
+        "enabled": true,
+        "algorithm": "zstd"
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "profile_config": {
+        "profile": {
+            "main": "Desktop",
+            "details": [
+                "GNOME"
+            ]
+        },
+        "gfx_driver": "All open-source (default)",
+        "greeter": "gdm"
+    },
+    "pacman_config": {
+        "color": true,
+        "parallel_downloads": 5
+    },
+    "disk_config": {
+        "config_type": "default_layout",
+        "device_modifications": [
+            {
+                "device": "/dev/nvme0n1",
+                "wipe": true,
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "flags": [
+                            "boot"
+                        ],
+                        "fs_type": "fat32",
+                        "size": {
+                            "sector_size": null,
+                            "unit": "MiB",
+                            "value": 512
+                        },
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+                        "start": {
+                            "sector_size": null,
+                            "unit": "MiB",
+                            "value": 1
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [],
+                        "flags": [],
+                        "fs_type": "ext4",
+                        "size": {
+                            "sector_size": null,
+                            "unit": "Percent",
+                            "value": 100
+                        },
+                        "mount_options": [],
+                        "mountpoint": "/",
+                        "obj_id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+                        "start": {
+                            "sector_size": null,
+                            "unit": "MiB",
+                            "value": 513
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ]
+            }
+        ]
+    }
+}

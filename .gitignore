@@ -1,0 +1,15 @@
+# WiFi credentials
+wifi.env
+*.env
+
+# Build artifacts 
+build/output/
+build/*.iso
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
